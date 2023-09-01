@@ -4,4 +4,5 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 [![Solved.ac
 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=iit807)](https://solved.ac/iit807)
 
-![image](https://github.com/hongmyeoun/algorithm/assets/139526068/01844a57-e899-4f6d-83c3-c575ad3b1760)
+
+![채팅](https://github.com/hongmyeoun/algorithm/assets/139526068/a1113ca9-9a5e-447c-91f1-a983b4c7bad0)
