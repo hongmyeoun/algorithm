@@ -6,3 +6,8 @@ def solution(num_list):
     else:
         num_list.append(last*2)
     return num_list
+
+# python에서 list의 순서는 -1 이 있었다는거 까먹어서 못햇던것
+def solution(l):
+    l.append(l[-1]-l[-2] if l[-1]>l[-2] else l[-1]*2)
+    return l
