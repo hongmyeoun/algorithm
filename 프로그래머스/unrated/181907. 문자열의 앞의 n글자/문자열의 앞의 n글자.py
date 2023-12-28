@@ -1,0 +1,1 @@
+solution = lambda my_string, n: my_string[:n]
