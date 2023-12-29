@@ -8,10 +8,15 @@ def solution(n):
     # 3인 수 : 글자 안에 3이 들어간 수 // '3' in str(n)
     # 1부터 100까지 저주마을 숫자를 저장한 list를 생성 -> 입력조건이 그거임
     # n값을 저주마을 숫자리스트 index로 찾아냄
-    curse_numlist = []
-    # curse_numlist의 index가 n과 같아지면 종료
-    for i in range(1000):
-        if not i%3 or '3' in str(i):
-            continue
-        curse_numlist.append(i)
-    return curse_numlist[n-1]
+    # curse_numlist = []
+    # # curse_numlist의 index가 n과 같아지면 종료
+    # for i in range(1000):
+    #     if not i%3 or '3' in str(i):
+    #         continue
+    #     curse_numlist.append(i)
+    answer = 0
+    for _ in range(n):
+        answer += 1
+        while not answer%3 or '3' in str(answer):
+            answer += 1
+    return answer
