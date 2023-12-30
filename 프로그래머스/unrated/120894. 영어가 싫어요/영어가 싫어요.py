@@ -1,12 +1,22 @@
-import re
+# import re
+
+# def solution(numbers):
+#     english_num = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+#     num = list(range(0, 10))
+#     num_dict = dict(zip(english_num, num))
+    
+#     pattern = '|'.join(num_dict.keys())
+#     matches = re.findall(pattern, numbers)
+#     answer = ''.join(str(num_dict[word]) for word in matches)
+        
+#     return int(answer)
 
 def solution(numbers):
     english_num = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
     num = list(range(0, 10))
     num_dict = dict(zip(english_num, num))
     
-    pattern = '|'.join(num_dict.keys())
-    matches = re.findall(pattern, numbers)
-    answer = ''.join(str(num_dict[word]) for word in matches)
+    for number in num_dict.keys():
+        numbers = numbers.replace(number, str(num_dict[number]))
         
-    return int(answer)
+    return int(numbers)
