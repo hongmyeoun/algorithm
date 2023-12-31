@@ -12,6 +12,12 @@ def solution(letter):
 # 의사코드
     영어가 싫어요와 동일할 듯?
     replace로 바꿔줬던거 같은데
+        
+        for key in morse.keys():
+            if key in letter:
+                letter = letter.replace(key, morse[key])
+        이렇게 하니 "eeee e aee aee mt" 결과가 나옴
+    
     이 아니라, 공백으로 단어를 나누고 morse에서 value를 찾아 가져오기
 
 # 리스트 컴프리헨션과 제너레이터
