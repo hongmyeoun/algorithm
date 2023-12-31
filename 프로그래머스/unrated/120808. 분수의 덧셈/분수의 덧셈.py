@@ -77,3 +77,19 @@ def solution(numer1, denom1, numer2, denom2):
             num_sum //= i
 
     return [num_sum, dem_sum]
+
+# math 라이브러리 활용(작성자가 다 반대로 써둠(파라미터))
+import math
+
+def solution(numer1, denom1, numer2, denom2):
+    numer = numer1 * denom2 + numer2 * denom1
+    denom = denom1 * denom2
+    gcd = math.gcd(numer, denom)
+    return [numer//gcd, denom//gcd]
+
+# Fraction 라이브러리 사용
+from fractions import Fraction
+
+def solution(numer1, denom1, numer2, denom2):
+    answer = Fraction(numer1, denom1) + Fraction(numer2, denom2)
+    return [answer.numerator, answer.denominator]
