@@ -1,0 +1,16 @@
+def solution(dots):
+    for i in range(len(dots)):
+        if dots[0][0] != dots[i][0]:
+            width = abs(dots[i][0] - dots[0][0])
+        if dots[0][1] != dots[i][1]:
+            height = abs(dots[i][1] - dots[0][1])
+    return width * height
+
+# 의사코드
+    # 입력 순서가 [아래왼쪽, 아래오른쪽, 위오른쪽, 위왼쪽]으로 고정이면
+    # |아래오른쪽 x좌표 - 아래왼쪽 x좌표| * |위왼쪽 y좌표 - 아래왼쪽 y좌표|
+    # abs(dots[1][0] - dots[0][0]) * abs(dots[3][1] - dots[0][1])
+    
+    # 고정이 아니면
+    # dots[0][0]과 dots[i][0]를 비교 다른거 찾기
+    # dots[0][1]과 dots[i][1]를 비교 다른거 찾기
