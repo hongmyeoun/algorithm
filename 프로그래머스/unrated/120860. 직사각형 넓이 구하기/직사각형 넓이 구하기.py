@@ -14,3 +14,25 @@ def solution(dots):
     # 고정이 아니면
     # dots[0][0]과 dots[i][0]를 비교 다른거 찾기
     # dots[0][1]과 dots[i][1]를 비교 다른거 찾기
+
+# max, min으로 풀이
+def solution(dots):
+    return (max(dots)[0] - min(dots)[0])*(max(dots)[1] - min(dots)[1])
+
+# math 라이브러리 활용
+import math
+
+def distance(x1, y1, x2, y2):
+    return math.sqrt(math.pow(x1 - x2, 2) + math.pow(y1 - y2, 2))
+
+def solution(dots):   
+    A = dots.pop(0)
+    for dot in dots:
+        if A[0] == dot[0]:
+            B = dot
+        elif A[1] == dot[1]:
+            C = dot
+
+    return distance(*A, *B) * distance(*A, *C)
+
+너무 어렵게 푼거 같다. math를 쓰면
