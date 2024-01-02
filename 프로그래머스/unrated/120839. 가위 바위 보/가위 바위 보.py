@@ -1,0 +1,11 @@
+def solution(rsp):
+    answer = ''
+    rsp_dict = {'2':'0', '0':'5', '5':'2'}
+    for c in rsp:
+        if c == '2':
+            answer += rsp_dict[c]
+        elif c == '0':
+            answer += rsp_dict[c]
+        elif c == '5':
+            answer += rsp_dict[c]
+    return answer
