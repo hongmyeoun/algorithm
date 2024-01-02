@@ -25,3 +25,15 @@ def solution(sides):
     # 11이가장 길면
     # 7 + a > 11, 11 >= a > 4, [5,6,7,8,9,10,11]
     # # 나머지 한 변이 될 수 있는 정수의 개수
+
+# 다른사람 풀이
+(max(sides) - (max(sides) + 1 - min(sides)) + 1) + (sum(sides) - max(sides) - 1) -> 조건을 정리한 식들
+
+def solution(sides):
+    return sum(sides) - max(sides) + min(sides) - 1
+
+# 요소가 2개인 리스트이므로 : sum(sides) - max(sides) = 2 * min(sides)
+def solution(sides):
+    return 2 * min(sides) - 1
+
+
