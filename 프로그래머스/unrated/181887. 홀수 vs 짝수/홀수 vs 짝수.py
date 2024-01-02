@@ -14,3 +14,7 @@ def solution(num_list):
         return odd_sum
     else:
         return even_sum
+
+# 인덱싱으로 풀이
+def solution(num_list):
+    return max(sum(num_list[::2]), sum(num_list[1::2]))
