@@ -9,3 +9,8 @@ def solution(rsp):
         elif c == '5':
             answer += rsp_dict[c]
     return answer
+
+# 더 쉽게 사용
+def solution(rsp):
+    d = {'0':'5','2':'0','5':'2'}
+    return ''.join(d[i] for i in rsp)
