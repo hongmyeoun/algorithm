@@ -4,3 +4,10 @@ def solution(num, k):
         if num[i] == str(k):
             return i+1
     return -1
+
+# try exception 활용
+def solution(num, k):
+    try:
+        return str(num).index(str(k)) + 1
+    except ValueError:
+        return -1
