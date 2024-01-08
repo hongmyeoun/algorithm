@@ -26,3 +26,19 @@ def solution(dots):
 #     delta_CD = abs((y4-y3)/(x4-x3)) # 선분 CD의 기울기
     
 #     return 1 if delta_AB == delta_CD or delta_AC == delta_BD or delta_AD == delta_BC else 0
+
+# 숏코딩 햄스터
+from functools import reduce
+def solution(dots):
+    return int(max(reduce(lambda dict, x: dict.update({x: dict.get(x, 0)+1}) or dict,[(d1[1] - d2[1])/(d1[0]-d2[0]) if d1[0]-d2[0] else "x" for d1 in dots for d2 in dots if not d1==d2], {}).values()) > 2)
+
+reduce(람다식, 리스트)
+numbers_addition = [1, 2, 3, 4, 5]
+result_addition = reduce(lambda x, y: x + y, numbers_addition)
+결과 : 15 # 1~5까지 더함
+
+numbers_multiplication = [1, 2, 3, 4, 5]
+result_multiplication = reduce(lambda x, y: x * y, numbers_multiplication)
+결과 : 120 # 1~5까지 곱함
+
+람다식을 리스트에 적용해 더한값을 반환
