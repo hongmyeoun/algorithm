@@ -6,3 +6,7 @@ def solution(absolutes, signs):
         else:
             answer -= i
     return answer
+
+# 처음 접근 방식
+def solution(absolutes, signs):
+    return sum(absolutes if sign else -absolutes for absolutes, sign in zip(absolutes, signs))
