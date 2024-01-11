@@ -6,3 +6,12 @@ def solution(number):
                 if number[i]+number[j]+number[k] == 0:
                     answer += 1
     return answer
+
+# 또 까먹은 조합
+def solution (number) :
+    from itertools import combinations
+    cnt = 0
+    for i in combinations(number,3) :
+        if sum(i) == 0 :
+            cnt += 1
+    return cnt
