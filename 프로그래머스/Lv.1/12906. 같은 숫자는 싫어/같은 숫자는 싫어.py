@@ -12,3 +12,12 @@ def solution(arr):
         else:
             answer.append(arr[i])
     return answer
+
+# 더 간단한 마지막수 걸러내는법
+def no_continuous(s):
+    a = []
+    for i in s:
+        if a[-1:] == [i]: 
+            continue
+        a.append(i)
+    return a
