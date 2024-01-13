@@ -32,3 +32,6 @@ def solution(sizes):
 # 80 50
 
 # [max, min]으로 정렬한뒤, max의 max값과 min의 max값을 곱함
+
+def solution(sizes):
+    return max(max(x) for x in sizes) * max(min(x) for x in sizes)
