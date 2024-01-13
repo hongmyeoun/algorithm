@@ -25,3 +25,17 @@ def bin_str_gen(dec, repeat):
         bin_str = str(dec%2) + bin_str
         dec //= 2
     return bin_str
+
+# rjust와 bin(a|b)
+def solution(n, arr1, arr2):
+    answer = []
+    for i,j in zip(arr1,arr2):
+        a12 = str(bin(i|j)[2:])
+        a12=a12.rjust(n,'0')
+        a12=a12.replace('1','#')
+        a12=a12.replace('0',' ')
+        answer.append(a12)
+    return answer
+
+bin(a|b)는 a와 b를 or로 계산해서 새로운 이진수를 만들어냄 -> [2:] 이걸로 앞 0b를 제거한 str생성
+rjust(n,'0') -> n에 맞게 우측으로 정렬후 빈공간(좌측)을 '0'으로 채움
