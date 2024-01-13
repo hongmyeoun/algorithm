@@ -13,3 +13,14 @@ def solution(cards1, cards2, goal):
 # 카드2의 첫단어와 비교해 같다면 카드2를 사용(삭제)
 # 둘다아니면 "No"
 # 끝났으면 "Yes"
+
+# pop()을 사용
+def solution(cards1, cards2, goal):
+    for g in goal:
+        if len(cards1) > 0 and g == cards1[0]:
+            cards1.pop(0)       
+        elif len(cards2) >0 and g == cards2[0]:
+            cards2.pop(0)
+        else:
+            return "No"
+    return "Yes"
