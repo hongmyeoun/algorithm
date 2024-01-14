@@ -12,7 +12,7 @@ def divisor_counter(n):
     for i in range(1, int(n**0.5)+1):
         if n%i == 0:
             divisors.append(i)
-            if i != n//i:
+            if i != n//i: # 완전제곱수가 들어왔을때 중복 제거 -> 시간복잡도 O(1)
                 divisors.append(n//i)
     return len(divisors)
 
@@ -24,3 +24,15 @@ def divisor_counter(n):
 # 약수의 개수가 limit을 넘어가지 않는다면 answer 에 더함
 # 넘어간다면 power를 더함
 # answer return
+
+# len(set)으로 완전제곱처리 -> 시간복잡도 O(1)
+def cf(n): # 공약수 출력
+    a = []
+    for i in range(1,int(n**0.5)+1):
+        if n%i == 0:
+            a.append(n//i)
+            a.append(i)
+    return len(set(a))
+    
+def solution(number, limit, power):
+    return sum([cf(i) if cf(i)<=limit else power for i in range(1,number+1)]) # -> 이부분 리스트컴프리헨션을 안쓰면 더 효율적
