@@ -35,3 +35,17 @@ def solution(n, m, section):
 # index+m-1부분과 len를 비교해 out of index 방지
 # 바꾼뒤 count + 1
 # 다음 순회는 end + 1로 조절
+
+# 간단하게 풀이 리스트를 안만들어 효율적
+def solution(n, m, section):
+    answer = 1
+    prev = section[0]
+    for sec in section:
+        if sec - prev >= m:
+            prev = sec
+            answer += 1
+
+    return answer
+
+section과 section사이의 거리를 재서 그 거리가 m보다 크거나 같다면 색을 칠함
+아니면 칠하지 않고 1을 반환
