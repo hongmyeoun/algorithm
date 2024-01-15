@@ -2,9 +2,9 @@ def solution(s, skip, index):
     answer = ''
     alp = [chr(i) for i in range(ord('a'),ord('z')+1)]
     skip_alp = [c for c in skip]
-    a = sorted(list(set(alp)-set(skip_alp)))*3
+    a = sorted(list(set(alp)-set(skip_alp)))
     for char in s:
-        answer += a[a.index(char)+index]
+        answer += a[(a.index(char)+index)%len(a)]
     return answer
 
 # 암호 규칙
