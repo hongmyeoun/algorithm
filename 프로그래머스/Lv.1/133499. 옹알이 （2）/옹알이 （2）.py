@@ -29,3 +29,14 @@ def solution(babbling):
 # temp 초기화
 # temp가 초기화 된체로 루프가 끝나면 -> 모든 문자 발음 가능
 # answer +1
+
+# .strip()으로 계산
+def solution(babbling):
+    answer = 0
+    for i in babbling:
+        for j in ['aya','ye','woo','ma']:
+            if j*2 not in i: # 연속발음 배제
+                i=i.replace(j,' ') # 나온 단어를 공백으로 치환
+        if len(i.strip())==0: # 공백을 지웠을때 빈값이면 정답추가
+            answer +=1
+    return answer
