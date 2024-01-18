@@ -1,3 +1,6 @@
+n은 lottos 리스트의 길이이고, m은 win_nums 리스트의 길이
+
+# O(n*m)
 def solution(lottos, win_nums):
     check = 0
     for num in win_nums:
@@ -18,3 +21,16 @@ def solution(lottos, win_nums):
 # 0의 개수를 셈
 # 최고 당첨 순위 -> check + 0의 개수
 # 최저 당첨 순위 -> check의 개수
+
+# rank로 한번에 가능
+# O(n+m)
+def solution(lottos, win_nums):
+
+    rank=[6,6,5,4,3,2,1]
+
+    cnt_0 = lottos.count(0)
+    ans = 0
+    for x in win_nums:
+        if x in lottos:
+            ans += 1
+    return rank[cnt_0 + ans],rank[ans]
