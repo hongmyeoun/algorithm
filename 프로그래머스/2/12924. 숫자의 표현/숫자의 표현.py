@@ -36,4 +36,17 @@ def solution(n):
 # 15 - (1+2+3+4+5) = 0
 # 0%5 = 0, 0//5 = 0
 
+# 풀이
+def expressions(num):
+    return len([i  for i in range(1,num+1,2) if num % i is 0])
 
+def expressions(num):
+    answer = 0
+    for i in range(1, num+1):
+        summ = 0
+        while (summ < num):
+            summ += i
+            i += 1
+        if summ == num:
+            answer += 1
+    return answer
