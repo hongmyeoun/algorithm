@@ -72,7 +72,7 @@ print(quick_sort([5,1,6,4,3,2,7], True)) # [7, 6, 5, 4, 3, 2, 1]
 print(quick_sort2([5,1,6,4,3,2,7])) # [1, 2, 3, 4, 5, 6, 7]
 print(quick_sort2([5,1,6,4,3,2,7], True)) # [7, 6, 5, 4, 3, 2, 1]
 
-
+# 어떤분 코드 참조 테스트
 import time
 import random
 
