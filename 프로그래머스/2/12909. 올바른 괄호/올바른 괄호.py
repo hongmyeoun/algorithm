@@ -12,6 +12,13 @@ def solution(s):
     
     return False if stack else True
 
+# Try를 이용해서 pop()에러가 나면 False 
+if c == ')':
+    try:
+        st.pop()
+    except IndexError:
+        return False
+
 # 효율성 테스트 1,2 시간초과
 # def solution(s):
 #     while "()" in s:
