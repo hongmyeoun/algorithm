@@ -30,3 +30,33 @@ def solution(priorities, location):
 # 1: [B,C,D] -> [B,C,D,A]
 # 2: [C,D,A] -> [C,D,A,B]
 # 3: [C,D,A,B] == [3,2,2,1]
+
+# 비슷한 풀이
+def solution(priorities, location):
+    queue =  [(i,p) for i,p in enumerate(priorities)]
+    answer = 0
+    while True:
+        cur = queue.pop(0)
+        if any(cur[1] < q[1] for q in queue): # any() 인자로 받은 iterable(순회 가능한 객체)의 요소 중에서 어느 하나라도 조건을 만족하는지 검사 => 만족 True, ㄴ False
+            queue.append(cur)
+        else:
+            answer += 1
+            if cur[0] == location:
+                return answer
+
+# deque를 사용
+from collections import deque
+def solution(priorities, location):
+    index_list = deque([i for i in range(len(priorities))])
+    maximum = max(priorities)
+    answer = 0
+    while True:
+        index = index_list.popleft()
+        if priorities[index] < maximum:
+            index_list.append(index)
+        else:
+            answer += 1
+            priorities[index] = 0
+            maximum = max(priorities)
+            if index == location:
+                return answer
