@@ -34,3 +34,57 @@ def solution(bridge_length, weight, truck_weights):
 # 7 [] [60] [7,4,5]
 # 8 [] [00] [7,4,5]
 # 8sec
+
+# 비슷한 풀이 순서랑 조건문만 바뀜(프로그래머스)
+from collections import deque
+
+def solution(bridge_length, weight, truck_weights):
+    bridge = deque(0 for _ in range(bridge_length))
+    total_weight = 0
+    step = 0
+    truck_weights.reverse()
+
+    while truck_weights:
+        total_weight -= bridge.popleft()
+        if total_weight + truck_weights[-1] > weight:
+            bridge.append(0)
+        else:
+            truck = truck_weights.pop()
+            bridge.append(truck)
+            total_weight += truck
+        step += 1
+
+    step += bridge_length
+
+    return step
+
+# under 0.1sec
+from collections import deque
+
+def solution(bridge_length, weight, truck_weights):
+    b, w, t = bridge_length, weight, truck_weights
+    time = deque([1])
+    wsum = deque([t[0]])
+    sec = 0
+    for v, i in enumerate(t[1:]):
+        if i <= weight - sum(wsum):
+                time.append(1)
+                wsum.append(i)
+                if sum(time) - time[0] == b:
+                    sec += time.popleft()
+                    wsum.popleft()
+                continue
+        if i <= weight - sum(wsum) + wsum[0]:
+            sec += time.popleft()
+            wsum.popleft()
+            time.append(b - sum(time))
+            wsum.append(i)
+            continue
+        while i > weight - sum(wsum):
+            sec += time.popleft()
+            wsum.popleft()
+        time.append(b - sum(time))
+        wsum.append(i)
+    for i in time:
+        sec += i
+    return sec + b
