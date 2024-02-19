@@ -1,5 +1,5 @@
 def solution(numbers):
-    if sum(numbers) == 0:
+    if sum(numbers) == 0: # 11번 통과를 못함, 입력값이 [0, 0]인 경우
         return "0"
     max_len = len(str(max(numbers)))
     numbers.sort(key=lambda x: str(x) * (max_len // len(str(x))) + str(x), reverse=True)
@@ -7,6 +7,12 @@ def solution(numbers):
 
 # 숫자 뒤에 그 숫자를 반복해 비교
 
+def solution(numbers):
+    numbers = list(map(str, numbers))
+    numbers.sort(key=lambda x: x*3, reverse=True)
+    return str(int(''.join(numbers)))
+
+# 많은 테케에서 실패
 # def solution(numbers):
 #     max_len = len(str(max(numbers)))
 #     numbers.sort(key=lambda x: str(x).ljust(max_len, str(x)[-1]), reverse=True)
