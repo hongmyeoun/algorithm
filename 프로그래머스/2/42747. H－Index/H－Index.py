@@ -16,6 +16,16 @@ def solution(citations):
 # 인용 횟수 vs 인용 횟수이상의 논문의 수
 # 에서 더 작은 수가 h-index
 
+def solution(citations):
+    citations = sorted(citations)
+    l = len(citations)
+    for i in range(l):
+        if citations[i] >= l-i:
+            return l-i
+    return 0
+작은수부터 정렬한뒤, l-i(현재 인덱스와 같거나 큰 수의 갯수)와 현제 인덱스 비교
+만약 true이면 l-i 반환
+
 # [10, 8, 5, 4, 3] 의 인용횟수를 가진 교수가 있다면
 # 10번 이상 인용 횟수를 가진 논문은 1편입니다. 이때 H-Index는 1입니다.
 # 8번 이상 인용 횟수를 가진 논문은 2편입니다. 이때 H-Index는 2입니다.
