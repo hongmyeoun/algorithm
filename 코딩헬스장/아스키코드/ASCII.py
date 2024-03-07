@@ -7,7 +7,7 @@ def AtoI(count = 0):
         count += 1
         ascii = input(f"{len(ascii)}자리 글자입니다...문자 한 글자만 써주세요({count}) : ")
 
-    print(f"'{ascii}' -> {ord(ascii)}")
+    print(f"'{ascii}' -> {ord(ascii)}") # ord(chr): chr값을 int값으로 반환해주는 함수
 
 AtoI()
 # 결과
@@ -35,7 +35,7 @@ def ItoA(count = 0):
             count += 1
             number = int(input(f"0~127의 정수값을 입력해주세요({count}) : "))
 
-        print(f"{number} -> '{chr(number)}'")
+        print(f"{number} -> '{chr(number)}'") # chr(int): int값을 아스키코드로 반환해주는 내장함수
 
     except ValueError:
         print("실수값 입니다.", end=" ")
