@@ -13,3 +13,16 @@ def solution(arr):
 
 def lcm(a, b):
     return a * b // math.gcd(a, b)
+
+더 간단히
+def solution(arr):
+    answer = arr[0]
+    
+    for num in arr:
+        answer = num * answer // math.gcd(num, answer)
+    
+    return answer
+
+fraction이라는 것 까먹지 말기
+
+from fractions import gcd
