@@ -1,7 +1,6 @@
 def solution(n,a,b):
     answer = 0
     while True:
-        # if (a+1 == b or b+1 == a) and (min(a, b)%2 == 1):
         if (min(a, b)+1 == max(a, b)) and (min(a, b)%2 == 1):
             answer += 1
             break
