@@ -1,10 +1,10 @@
 # [level 2] 멀리 뛰기 - 12914 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12914?language=python3) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12914?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 10.1 MB, 시간: 0.12 ms
+메모리: 58.1 MB, 시간: 0.09 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 03월 21일 20:23:18
+2024년 03월 21일 20:40:22
 
 ### 문제 설명
 
