@@ -26,3 +26,32 @@ def solution(triangle):
 # 4 5 2 6 5 -> 24 25/30 27/22 26/25 24 -> 24 30 27 26 24
 # 마지막 층에서 최대값 반환
 # -> 30
+
+# 다른사람의 dp식
+def solution(triangle):
+    dp = []
+    for t in range(1, len(triangle)):
+        for i in range(t+1): # 어쩌피 삼각형은 하나씩 커지니깐 triangle의 길이를 재지 않아도 됨
+            if i == 0:
+                triangle[t][0] += triangle[t-1][0]
+            elif i == t:
+                triangle[t][-1] += triangle[t-1][-1]
+            else:
+                triangle[t][i] += max(triangle[t-1][i-1], triangle[t-1][i])
+    return max(triangle[-1])
+
+# ????????
+solution = lambda t, l = []: max(l) if not t else solution(t[1:], [max(x,y)+z for x,y,z in zip([0]+l, l+[0], t[0])])
+설명
+1. 한 층씩 제거하며, 그 층에서 계산한 최대 이동거리 배열을 계산하여, 한 층을 제거한 traingle을 첫번째 input, 이동거리 배열을 두 번째 input으로 넣어줍니다.
+2. 따라서 traingle이 없으면 제거할 층이 없으므로 최종 조건입니다. 
+3. [0] + l, l + [0] 을 이용하여 모서리 조건을 해결해줍니다.
+-> 위 두식과 비슷한듯??
+
+# 반대로 올라가는 식
+def solution(triangle):
+    for i in range(len(triangle) - 2, -1, -1): # 밑에서부터 위로 올라감, range(start, end, step) end = -1 ==> 0
+        for j in range(len(triangle[i])):
+            triangle[i][j] += max(triangle[i + 1][j], triangle[i + 1][j + 1])
+    return triangle[0][0]
+
